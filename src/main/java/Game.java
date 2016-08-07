@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**
- * Created by chris on 8/3/2016.
- */
+
 public class Game {
 
     public static void main(String[] args){
@@ -30,9 +28,7 @@ public class Game {
 
 
         //set up user attributes
-        int guess = 0;
         int numberInJar = jar.getNumberInJar();
-        int playerGuess;
         String answer = "";
 
         System.out.println("\nPress ENTER to start the game...");
@@ -40,23 +36,13 @@ public class Game {
         scan.nextLine();//continues to game code
 
 
-        //execute game with prompt
-        do {
-            System.out.println("Enter a number between 1 and " + amount + " : ");
-            playerGuess = scan.nextInt();
+        Prompter prompt = new Prompter();
+        prompt.runGame(amount, numberInJar,item);
 
-            if (playerGuess != numberInJar && playerGuess < numberInJar) {
-                System.out.println("Sorry, but your guess was too low.");
-            }
-            if(playerGuess != numberInJar && playerGuess > numberInJar) {
-                System.out.println("Sorry, but your guess was too high.");
-            }
-            guess++;
-        } while (playerGuess != numberInJar);
 
-        //print results to the player
-       System.out.printf("%nGreat Job! You guessed the correct number of %s in the jar. " +
-               "It only took you %d tries. %n", item, guess);
+
+
 
     }//end main
 }//end Game class
+

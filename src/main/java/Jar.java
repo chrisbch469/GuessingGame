@@ -1,8 +1,6 @@
 import java.util.Random;
 
-/**
- * Created by chris on 8/3/2016.
- */
+
 public class Jar {
 
     //attributes for jar
@@ -41,5 +39,5 @@ public class Jar {
     public int getNumberInJar(){
         return numberInJar;
     }
-
-}//end class
+    
+}
